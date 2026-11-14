@@ -445,3 +445,22 @@
     transition: none;
   }
 }
+
+@include touch {
+  .chipProjects {
+    min-height: 44px;
+  }
+}
+
+.chipStatus small {
+  font-size: 0.7rem;
+}
+
+@include touch {
+  .scrollCue {
+    display: none;
+  }
+  .chipStatus small {
+    font-size: 0.75rem;
+  }
+}

@@ -224,3 +224,25 @@
     transform: none;
   }
 }
+
+.count {
+  font-size: 0.75rem;
+}
+
+/* Phones: the project count moves under the text so descriptions get full width */
+@include down(sm) {
+  .item {
+    display: grid;
+    grid-template-columns: 32px minmax(0, 1fr);
+    column-gap: 0.7rem;
+    row-gap: 0.25rem;
+    align-items: start;
+  }
+  .icon {
+    grid-row: span 2;
+  }
+  .count {
+    grid-column: 2;
+    justify-self: start;
+  }
+}

@@ -48,3 +48,10 @@
   border-color: color-mix(in srgb, var(--tint) 35%, transparent);
   background: color-mix(in srgb, var(--tint) 9%, transparent);
 }
+
+@include touch {
+  .toggle {
+    width: 44px;
+    height: 44px;
+  }
+}

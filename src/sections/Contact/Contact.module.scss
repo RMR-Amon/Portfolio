@@ -253,8 +253,37 @@
   }
 }
 
+/* Phones: icon sits next to the label so the value gets the full card width */
 @include down(sm) {
+  .card {
+    grid-template-columns: 40px minmax(0, 1fr);
+    grid-template-areas:
+      'icon label'
+      'value value'
+      'row row';
+    row-gap: 0.35rem;
+  }
+  .icon {
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    font-size: 1.15rem;
+  }
   .value {
-    font-size: 1rem;
+    font-size: 1.05rem;
+    margin-top: 0.15rem;
+  }
+}
+
+@include touch {
+  .copy {
+    min-height: 44px;
+    padding-inline: 0.9rem;
+  }
+}
+
+@include touch {
+  .label {
+    font-size: 0.75rem;
   }
 }

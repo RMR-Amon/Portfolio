@@ -199,3 +199,13 @@
     animation: none;
   }
 }
+
+@include touch {
+  .option {
+    min-height: 48px;
+  }
+  .esc {
+    min-height: 32px;
+    padding-inline: 0.6rem;
+  }
+}

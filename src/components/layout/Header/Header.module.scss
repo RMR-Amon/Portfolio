@@ -211,3 +211,29 @@
     transition: none;
   }
 }
+
+/* Touch screens: 44px targets */
+@include touch {
+  .brand {
+    min-height: 44px;
+    align-items: center;
+  }
+}
+
+/* Very small phones (≤359px): keep logo + three buttons on one row */
+@media (max-width: 359.98px) {
+  .actions {
+    gap: 0.4rem;
+  }
+}
+
+@include touch {
+  .link {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .cta {
+    height: 44px;
+  }
+}

@@ -228,3 +228,34 @@
     animation: none;
   }
 }
+
+/* Readable on phones, 44px links on touch screens */
+.stats dt,
+.push time,
+.langTitle,
+.legend {
+  font-size: 0.75rem;
+}
+.live,
+.share {
+  font-size: 0.72rem;
+}
+
+@include touch {
+  .profile {
+    min-height: 44px;
+  }
+  .push a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding-block: 0;
+  }
+  .error a {
+    min-height: 44px;
+  }
+  .live,
+  .share {
+    font-size: 0.75rem;
+  }
+}

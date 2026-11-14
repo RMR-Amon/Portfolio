@@ -201,3 +201,16 @@
     opacity: 1;
   }
 }
+
+@include touch {
+  .link {
+    min-height: 44px;
+    padding-inline: 0.9rem;
+  }
+}
+
+@include touch {
+  .meta {
+    font-size: 0.75rem;
+  }
+}

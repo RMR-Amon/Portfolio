@@ -222,3 +222,24 @@
     animation: none;
   }
 }
+
+.label,
+.total span,
+.industry {
+  font-size: 0.72rem;
+}
+
+@include touch {
+  .details summary,
+  .website {
+    min-height: 44px;
+  }
+}
+
+@include touch {
+  .label,
+  .total span,
+  .industry {
+    font-size: 0.75rem;
+  }
+}

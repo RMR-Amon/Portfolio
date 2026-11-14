@@ -8,7 +8,10 @@
   font-size: var(--fs-xs);
   font-weight: 500;
   line-height: 1.3;
-  white-space: nowrap;
+  max-width: 100%;
+  // Short tags stay on one line; long ones (company services) wrap instead of overflowing.
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .default {

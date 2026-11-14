@@ -86,3 +86,10 @@
     animation: none;
   }
 }
+
+@include touch {
+  .close {
+    width: 44px;
+    height: 44px;
+  }
+}

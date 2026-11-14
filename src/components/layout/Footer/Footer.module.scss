@@ -68,3 +68,18 @@
 .built {
   font-family: var(--font-mono);
 }
+
+@include touch {
+  .brand {
+    min-height: 44px;
+    align-items: center;
+  }
+  .col a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  .col,
+  .col ul {
+    gap: 0.15rem;
+  }
+}

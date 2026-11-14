@@ -71,3 +71,10 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/// Touch screens (phones, tablets): larger targets and labels.
+@mixin touch {
+  @media (pointer: coarse) {
+    @content;
+  }
+}

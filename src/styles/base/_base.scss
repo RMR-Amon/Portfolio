@@ -4,6 +4,14 @@ html {
   background: var(--c-bg);
   color-scheme: dark;
 
+  // Large monitors: scale the whole (rem-based) design up a little
+  @media (min-width: 1920px) {
+    font-size: 106.25%;
+  }
+  @media (min-width: 2400px) {
+    font-size: 118.75%;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     scroll-behavior: auto;
   }
