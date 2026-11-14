@@ -1,0 +1,12 @@
+{
+  "name": "Maxmudjon Raximjonov — Frontend Developer",
+  "short_name": "Maxmudjon",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090c13",
+  "theme_color": "#090c13",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

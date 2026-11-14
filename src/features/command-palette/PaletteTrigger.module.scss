@@ -1,0 +1,47 @@
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 40px;
+  min-width: 40px;
+  padding-inline: 0.7rem;
+  border-radius: 12px;
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+  border: 1px solid var(--c-border);
+  background: rgba(255, 255, 255, 0.02);
+  transition:
+    color var(--dur),
+    border-color var(--dur),
+    background-color var(--dur);
+
+  svg {
+    font-size: 1.05rem;
+  }
+
+  @include hover {
+    color: var(--c-text);
+    border-color: var(--c-border-strong);
+  }
+  @include focus-ring(2px);
+}
+
+.label,
+.kbd {
+  display: none;
+
+  @include up(xl) {
+    display: inline;
+  }
+}
+
+.kbd {
+  padding: 0.1rem 0.4rem;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--c-text-dim);
+  border: 1px solid var(--c-border-strong);
+  background: rgba(255, 255, 255, 0.03);
+}

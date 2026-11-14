@@ -1,0 +1,157 @@
+.beach {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-seasonal);
+  height: var(--beach-h);
+  pointer-events: none;
+  overflow: hidden;
+  animation: slideUp 1.4s var(--ease-out);
+  // Soft top edge so the strip blends into the page
+  -webkit-mask: linear-gradient(to bottom, transparent 0, #000 22%);
+  mask: linear-gradient(to bottom, transparent 0, #000 22%);
+}
+
+.sea {
+  position: absolute;
+  inset: 0 0 26% 0;
+}
+
+.wave {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  width: 200%;
+  height: 100%;
+  animation: drift linear infinite;
+
+  svg {
+    flex: 0 0 50%;
+    width: 50%;
+    height: 100%;
+  }
+}
+
+.back {
+  animation-duration: 26s;
+  opacity: 0.55;
+  .fill {
+    fill: #0e7490;
+  }
+}
+
+.mid {
+  animation-duration: 18s;
+  animation-direction: reverse;
+  opacity: 0.75;
+  .fill {
+    fill: #0891b2;
+  }
+}
+
+.front {
+  animation-duration: 12s;
+  opacity: 0.9;
+  .fill {
+    fill: #22b8cf;
+  }
+}
+
+.crest {
+  fill: none;
+  stroke: rgba(240, 253, 255, 0.75);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.glints span {
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.85);
+  opacity: 0;
+  animation: glint 3s ease-in-out infinite;
+}
+
+.sand {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 34%;
+  background:
+    radial-gradient(circle at 20% 70%, rgba(255, 255, 255, 0.12) 0 1px, transparent 2px) 0 0 / 18px 12px,
+    linear-gradient(180deg, #d9b77e 0%, #c49a5e 100%);
+}
+
+/* Tide: a band of wet sand and foam that washes in and out */
+.foam {
+  position: absolute;
+  left: -5%;
+  right: -5%;
+  top: -6px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(186, 230, 253, 0.35) 60%, transparent);
+  filter: blur(1.5px);
+  animation: tide 6s ease-in-out infinite;
+}
+
+.palm {
+  position: absolute;
+  left: clamp(8px, 4vw, 64px);
+  bottom: 8%;
+  width: clamp(54px, 7vw, 92px);
+  height: auto;
+  stroke: #1f2a24;
+  fill: #1f2a24;
+  opacity: 0.85;
+  transform-origin: 50% 100%;
+  animation: palm 7s ease-in-out infinite;
+
+  path:last-child {
+    fill: none;
+    stroke: #23432f;
+    stroke-width: 3;
+    stroke-linecap: round;
+  }
+}
+
+@keyframes drift {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes tide {
+  0%,
+  100% {
+    transform: translateY(0) scaleY(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(5px) scaleY(1.5);
+    opacity: 0.5;
+  }
+}
+
+@keyframes glint {
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes palm {
+  50% {
+    transform: rotate(-2.5deg);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+}

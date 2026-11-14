@@ -1,0 +1,211 @@
+.filters {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.3rem;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid var(--c-border);
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  flex-shrink: 0;
+  min-height: 38px;
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--c-text-muted);
+  transition:
+    color var(--dur),
+    background-color var(--dur);
+
+  @include hover {
+    color: var(--c-text);
+  }
+  @include focus-ring(1px);
+}
+
+.tabActive {
+  color: var(--c-accent-ink);
+  background: var(--gradient-accent);
+
+  .tabCount {
+    color: var(--c-accent-ink);
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  @include hover {
+    color: var(--c-accent-ink);
+  }
+}
+
+.tabCount {
+  display: inline-grid;
+  place-items: center;
+  min-width: 22px;
+  height: 20px;
+  padding-inline: 0.35rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--c-text-dim);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.techRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 34px;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  color: var(--c-text-muted);
+  border: 1px solid var(--c-border);
+  background: transparent;
+  transition:
+    color var(--dur),
+    border-color var(--dur),
+    background-color var(--dur);
+
+  @include hover {
+    color: var(--c-text);
+    border-color: var(--c-border-strong);
+  }
+  @include focus-ring(2px);
+}
+
+.chipActive {
+  color: var(--c-text);
+  border-color: var(--c-accent-line);
+  background: var(--c-accent-soft);
+}
+
+.results {
+  margin-bottom: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--c-text-dim);
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+
+  @include up(md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  @include up(lg) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+.cell {
+  animation: cardIn 600ms var(--ease-out) both;
+}
+
+.empty {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+  padding: 3rem 1rem;
+  text-align: center;
+  color: var(--c-text-muted);
+  border: 1px dashed var(--c-border-strong);
+  border-radius: var(--radius-lg);
+}
+
+.more {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.chev {
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.chevUp {
+  transform: rotate(180deg);
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+@include reduced-motion {
+  .cell {
+    animation: none;
+  }
+}
+
+.chipClear {
+  margin-left: 0.1rem;
+  font-size: 0.85em;
+  opacity: 0.8;
+}
+
+/* ---------- Phones: one swipeable row per filter group ---------- */
+@include down(md) {
+  .tabs {
+    width: 100%;
+    scroll-snap-type: x proximity;
+    // Fade at the right edge hints that the row scrolls
+    -webkit-mask: linear-gradient(90deg, #000 calc(100% - 36px), transparent);
+    mask: linear-gradient(90deg, #000 calc(100% - 36px), transparent);
+  }
+
+  .tab {
+    scroll-snap-align: start;
+    min-height: 40px;
+  }
+
+  .techRow {
+    flex-wrap: nowrap;
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
+    overflow-x: auto;
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
+    -webkit-mask: linear-gradient(90deg, transparent, #000 var(--gutter), #000 calc(100% - 40px), transparent);
+    mask: linear-gradient(90deg, transparent, #000 var(--gutter), #000 calc(100% - 40px), transparent);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .chip {
+    flex-shrink: 0;
+    min-height: 38px;
+    scroll-snap-align: start;
+  }
+}

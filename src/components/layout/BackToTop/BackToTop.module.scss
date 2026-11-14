@@ -1,0 +1,53 @@
+.button {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: calc(max(16px, env(safe-area-inset-bottom)) + var(--back-offset, 0px));
+  z-index: calc(var(--z-seasonal) + 1);
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  font-size: 1.2rem;
+  color: var(--c-text);
+  background: rgba(17, 23, 34, 0.85);
+  border: 1px solid var(--c-border-strong);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition:
+    opacity var(--dur) var(--ease-out),
+    transform var(--dur) var(--ease-out),
+    visibility var(--dur),
+    border-color var(--dur);
+
+  @include up(md) {
+    right: 28px;
+    bottom: calc(28px + var(--back-offset, 0px));
+  }
+
+  @include hover {
+    border-color: var(--c-accent-line);
+    svg {
+      transform: translateY(-2px);
+    }
+  }
+  @include focus-ring(3px);
+
+  svg {
+    transition: transform var(--dur) var(--ease-out);
+  }
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+/* Sit above the summer beach strip */
+:global(html[data-season='summer'][data-effects='on']) .button {
+  --back-offset: var(--beach-h, 0px);
+}

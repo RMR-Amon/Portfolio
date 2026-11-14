@@ -1,0 +1,70 @@
+.footer {
+  position: relative;
+  padding-block: clamp(3rem, 6vw, 4.5rem) 2rem;
+  border-top: 1px solid var(--c-border);
+  background: linear-gradient(180deg, rgba(17, 23, 34, 0.4), transparent);
+}
+
+.top {
+  display: grid;
+  gap: 2.5rem;
+
+  @include up(md) {
+    grid-template-columns: 1.6fr 1fr 1.2fr;
+  }
+}
+
+.brand {
+  display: inline-flex;
+  border-radius: 10px;
+  @include focus-ring(4px);
+}
+
+.tagline {
+  max-width: 340px;
+  margin-top: 1rem;
+  color: var(--c-text-muted);
+  font-size: var(--fs-sm);
+}
+
+.col {
+  display: grid;
+  align-content: start;
+  gap: 0.6rem;
+
+  ul {
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--fs-sm);
+    color: var(--c-text-muted);
+    word-break: break-word;
+    transition: color var(--dur);
+
+    @include hover {
+      color: var(--c-accent);
+    }
+    @include focus-ring(2px);
+  }
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--c-border);
+  font-size: var(--fs-xs);
+  color: var(--c-text-dim);
+}
+
+.built {
+  font-family: var(--font-mono);
+}

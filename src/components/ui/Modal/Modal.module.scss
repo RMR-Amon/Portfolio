@@ -1,0 +1,88 @@
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  @include up(md) {
+    align-items: center;
+    padding: 2rem;
+  }
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 7, 12, 0.72);
+  backdrop-filter: blur(6px);
+  animation: fade var(--dur) var(--ease-out);
+}
+
+.dialog {
+  position: relative;
+  width: 100%;
+  max-height: 92dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--c-bg-soft);
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  box-shadow: var(--shadow-lg);
+  animation: rise 420ms var(--ease-out);
+  outline: none;
+
+  @include up(md) {
+    max-width: 920px;
+    max-height: min(88dvh, 920px);
+    border-radius: var(--radius-xl);
+  }
+}
+
+.close {
+  position: sticky;
+  top: 12px;
+  float: right;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  margin: 12px 12px -52px 0;
+  border-radius: 50%;
+  color: var(--c-text);
+  font-size: 1.25rem;
+  background: rgba(9, 12, 19, 0.75);
+  border: 1px solid var(--c-border-strong);
+  backdrop-filter: blur(8px);
+  transition:
+    transform var(--dur) var(--ease-out),
+    border-color var(--dur);
+
+  @include hover {
+    transform: rotate(90deg);
+    border-color: var(--c-accent-line);
+  }
+  @include focus-ring(2px);
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.98);
+  }
+}
+
+@include reduced-motion {
+  .backdrop,
+  .dialog {
+    animation: none;
+  }
+}

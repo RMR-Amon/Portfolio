@@ -1,0 +1,81 @@
+:root {
+  /* ---------- Color ---------- */
+  --c-bg: #090c13;
+  --c-bg-soft: #0c111a;
+  --c-surface: #111722;
+  --c-surface-2: #161e2c;
+  --c-surface-3: #1c2637;
+  --c-border: rgba(148, 163, 184, 0.12);
+  --c-border-strong: rgba(148, 163, 184, 0.22);
+
+  --c-text: #f5f7fa;
+  --c-text-muted: #9aa4b2;
+  --c-text-dim: #7d8898;
+
+  --c-accent: #22d3ee;
+  --c-accent-2: #3b82f6;
+  --c-accent-ink: #04141a;
+  --c-accent-soft: rgba(34, 211, 238, 0.1);
+  --c-accent-line: rgba(34, 211, 238, 0.35);
+  --c-success: #34d399;
+  --c-warning: #fbbf24;
+
+  --gradient-accent: linear-gradient(120deg, #22d3ee 0%, #3b82f6 100%);
+  --gradient-text: linear-gradient(100deg, #f5f7fa 10%, #a5f3fc 55%, #60a5fa 100%);
+
+  /* ---------- Typography ---------- */
+  --font-sans: 'Inter Variable', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Space Grotesk Variable', 'Space Grotesk', var(--font-sans);
+  --font-mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  --fs-xl: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  --fs-2xl: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --fs-3xl: clamp(2.5rem, 1.6rem + 3.6vw, 4.5rem);
+
+  /* ---------- Layout ---------- */
+  --container: 1200px;
+  --gutter: 16px;
+  --header-h: 68px;
+  --section-y: clamp(72px, 6vw + 40px, 128px);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 30px -12px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 30px 80px -24px rgba(0, 0, 0, 0.75);
+  --shadow-glow: 0 0 0 1px rgba(34, 211, 238, 0.25), 0 12px 40px -12px rgba(34, 211, 238, 0.35);
+
+  /* ---------- Motion ---------- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 160ms;
+  --dur: 280ms;
+  --dur-slow: 600ms;
+
+  /* ---------- Layers ---------- */
+  --z-seasonal: 30;
+  --z-header: 50;
+  --z-overlay: 80;
+  --z-modal: 90;
+  --z-toast: 100;
+
+  @media (min-width: 768px) {
+    --gutter: 24px;
+    --header-h: 72px;
+  }
+  @media (min-width: 1280px) {
+    --gutter: 32px;
+  }
+  @media (min-width: 1536px) {
+    --container: 1280px;
+  }
+}

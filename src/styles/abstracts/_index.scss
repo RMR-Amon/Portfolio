@@ -1,0 +1,4 @@
+// Injected into every SCSS module via vite.config.ts.
+// Must only contain variables, functions and mixins — never CSS output.
+@forward 'breakpoints';
+@forward 'mixins';

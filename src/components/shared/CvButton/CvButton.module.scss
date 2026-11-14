@@ -1,0 +1,31 @@
+.wrap {
+  position: relative;
+  display: inline-flex;
+
+  &:hover .hint,
+  &:focus-within .hint {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.hint {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  z-index: 5;
+  padding: 0.45rem 0.7rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-xs);
+  white-space: nowrap;
+  color: var(--c-text);
+  background: var(--c-surface-3);
+  border: 1px solid var(--c-border-strong);
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 4px);
+  transition:
+    opacity var(--dur) var(--ease-out),
+    transform var(--dur) var(--ease-out);
+}

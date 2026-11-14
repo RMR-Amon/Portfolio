@@ -1,0 +1,116 @@
+.page {
+  position: relative;
+  display: grid;
+  min-height: 100svh;
+  padding: 1.5rem var(--gutter);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask: radial-gradient(ellipse at center, #000 20%, transparent 70%);
+    mask: radial-gradient(ellipse at center, #000 20%, transparent 70%);
+    pointer-events: none;
+  }
+}
+
+.logo {
+  position: relative;
+  justify-self: start;
+  align-self: start;
+  border-radius: 10px;
+  @include focus-ring(4px);
+}
+
+.center {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.code {
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 22vw, 12rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  color: var(--c-text);
+
+  span {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    animation: wobble 4s ease-in-out infinite;
+  }
+}
+
+.title {
+  font-size: var(--fs-xl);
+}
+
+.text {
+  max-width: 420px;
+  color: var(--c-text-muted);
+}
+
+.terminal {
+  max-width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.9rem 1.1rem;
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-align: left;
+  color: var(--c-text-muted);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+
+  span:first-child {
+    color: var(--c-accent);
+  }
+}
+
+.err {
+  color: #f87171;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  padding: 0.75rem 1.3rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  color: var(--c-accent-ink);
+  background: var(--gradient-accent);
+  transition: transform var(--dur) var(--ease-out);
+
+  @include hover {
+    transform: translateY(-2px);
+  }
+  @include focus-ring(3px);
+}
+
+@keyframes wobble {
+  50% {
+    transform: rotate(-8deg) translateY(-6px);
+  }
+}
+
+@include reduced-motion {
+  .code span {
+    animation: none;
+  }
+}

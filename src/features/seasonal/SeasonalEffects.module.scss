@@ -1,0 +1,22 @@
+.canvas {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-seasonal);
+  pointer-events: none;
+  animation: appear 1.2s var(--ease-out);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Keep the end of the page clear of the summer beach strip. */
+:global(html[data-season='summer'][data-effects='on']) :global(body) {
+  padding-bottom: var(--beach-h);
+}
+
+:global(:root) {
+  --beach-h: clamp(64px, 9vh, 104px);
+}

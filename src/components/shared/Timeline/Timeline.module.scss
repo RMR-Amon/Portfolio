@@ -1,0 +1,115 @@
+$marker: 48px;
+$marker-sm: 40px;
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+
+  // Rail
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: calc($marker-sm / 2);
+    width: 1px;
+    transform: translateX(-50%);
+
+    @include up(md) {
+      left: calc($marker / 2);
+    }
+  }
+  &::before {
+    background: var(--c-border);
+  }
+  // Animated fill
+  &::after {
+    background: linear-gradient(180deg, var(--c-accent), var(--c-accent-2) 70%, transparent);
+    transform-origin: top;
+    transform: translateX(-50%) scaleY(0);
+    transition: transform 1.6s var(--ease-out);
+  }
+  &.drawn::after {
+    transform: translateX(-50%) scaleY(1);
+  }
+
+  @include reduced-motion {
+    &::after {
+      transition: none;
+      transform: translateX(-50%) scaleY(1);
+    }
+  }
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: $marker-sm minmax(0, 1fr);
+  gap: 1rem;
+
+  @include up(md) {
+    grid-template-columns: $marker minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.marker {
+  position: relative;
+  z-index: 1;
+  width: $marker-sm;
+  height: $marker-sm;
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-border-strong);
+  box-shadow: 0 0 0 6px var(--c-bg);
+
+  @include up(md) {
+    width: $marker;
+    height: $marker;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .current & {
+    border-color: var(--c-accent-line);
+    box-shadow:
+      0 0 0 6px var(--c-bg),
+      0 0 0 7px rgba(34, 211, 238, 0.25);
+    animation: pulse 2.4s ease-out infinite;
+  }
+}
+
+.content {
+  min-width: 0;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow:
+      0 0 0 6px var(--c-bg),
+      0 0 0 7px rgba(34, 211, 238, 0.45);
+  }
+  70% {
+    box-shadow:
+      0 0 0 6px var(--c-bg),
+      0 0 0 16px rgba(34, 211, 238, 0);
+  }
+  100% {
+    box-shadow:
+      0 0 0 6px var(--c-bg),
+      0 0 0 16px rgba(34, 211, 238, 0);
+  }
+}
+
+@include reduced-motion {
+  .current .marker {
+    animation: none;
+  }
+}

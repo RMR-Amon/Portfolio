@@ -1,0 +1,15 @@
+.track {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: calc(var(--z-header) + 1);
+  height: 2px;
+  pointer-events: none;
+}
+
+.bar {
+  height: 100%;
+  background: var(--gradient-accent);
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.6);
+  transform: scaleX(0);
+  transform-origin: left;
+}
