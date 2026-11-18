@@ -1,13 +1,13 @@
 import type { IconType } from 'react-icons';
 import {
-  SiAxios, SiCss3, SiCssmodules, SiEslint, SiFigma, SiFramer, SiGit, SiGithub, SiGithubpages, SiHtml5,
-  SiJavascript, SiNetlify, SiNpm, SiPostcss, SiPostgresql, SiPostman, SiPython, SiReact, SiReactquery,
-  SiReactrouter, SiRedux, SiSass, SiSupabase, SiSwiper, SiTailwindcss, SiThreedotjs, SiTypescript,
-  SiVercel, SiVite,
+  SiAxios, SiCss3, SiCssmodules, SiEslint, SiFigma, SiFramer, SiGit, SiGithub, SiGithubactions, SiGithubpages,
+  SiHtml5, SiJavascript, SiNetlify, SiNpm, SiPostcss, SiPostgresql, SiPostman, SiPython, SiReact,
+  SiReacthookform, SiReactquery, SiReactrouter, SiRedux, SiSass, SiSupabase, SiSwiper, SiTailwindcss,
+  SiThreedotjs, SiTypescript, SiVercel, SiVite, SiZod,
 } from 'react-icons/si';
 import {
   TbAccessible, TbApi, TbArrowsSplit, TbBlocks, TbBrowser, TbBrush, TbChartArcs, TbDatabase, TbDevices,
-  TbEye, TbLanguage, TbLock, TbSeo, TbSparkles, TbUserShield, TbWaveSine,
+  TbEye, TbLanguage, TbLock, TbSeo, TbSparkles, TbTestPipe, TbUserShield, TbWaveSine,
 } from 'react-icons/tb';
 import { techs } from '@/data/skills';
 import type { TechId } from '@/types';
@@ -28,12 +28,14 @@ const icons: Partial<Record<TechId, IconType>> = {
   swiper: SiSwiper,
   threejs: SiThreedotjs,
   recharts: TbChartArcs,
+  'react-hook-form': SiReacthookform,
   redux: SiRedux,
   'context-api': SiReact,
   'tanstack-query': SiReactquery,
   'rest-api': TbApi,
   axios: SiAxios,
   supabase: SiSupabase,
+  zod: SiZod,
   'local-storage': TbDatabase,
   dom: TbBrowser,
   canvas: TbBrush,
@@ -41,6 +43,7 @@ const icons: Partial<Record<TechId, IconType>> = {
   'intersection-observer': TbEye,
   git: SiGit,
   github: SiGithub,
+  'github-actions': SiGithubactions,
   vite: SiVite,
   npm: SiNpm,
   eslint: SiEslint,
@@ -56,6 +59,7 @@ const icons: Partial<Record<TechId, IconType>> = {
   auth: TbLock,
   rbac: TbUserShield,
   'code-splitting': TbArrowsSplit,
+  testing: TbTestPipe,
   a11y: TbAccessible,
   seo: TbSeo,
   animation: TbSparkles,

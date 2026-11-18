@@ -22,6 +22,7 @@ export type TechId =
   | 'swiper'
   | 'threejs'
   | 'recharts'
+  | 'react-hook-form'
   // state
   | 'redux'
   | 'zustand'
@@ -31,6 +32,7 @@ export type TechId =
   | 'rest-api'
   | 'axios'
   | 'supabase'
+  | 'zod'
   | 'local-storage'
   // browser APIs
   | 'dom'
@@ -40,6 +42,7 @@ export type TechId =
   // tools
   | 'git'
   | 'github'
+  | 'github-actions'
   | 'vite'
   | 'npm'
   | 'eslint'
@@ -57,6 +60,7 @@ export type TechId =
   | 'auth'
   | 'rbac'
   | 'code-splitting'
+  | 'testing'
   | 'a11y'
   | 'seo'
   | 'animation';

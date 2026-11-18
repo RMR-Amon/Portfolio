@@ -25,6 +25,7 @@ export const techs: Record<TechId, Tech> = {
   swiper: { id: 'swiper', name: 'Swiper.js', color: '#6332F6', category: 'frontend' },
   threejs: { id: 'threejs', name: 'Three.js', color: '#E5E7EB', category: 'frontend', note: '3D scenes, game physics and AI opponents in the browser.' },
   recharts: { id: 'recharts', name: 'Recharts', color: '#22B5BF', category: 'frontend' },
+  'react-hook-form': { id: 'react-hook-form', name: 'React Hook Form', color: '#EC5990', category: 'frontend' },
 
   // ---------- State ----------
   redux: { id: 'redux', name: 'Redux', color: '#764ABC', category: 'state' },
@@ -36,6 +37,7 @@ export const techs: Record<TechId, Tech> = {
   'rest-api': { id: 'rest-api', name: 'REST APIs', color: '#22D3EE', category: 'data', note: 'fetch / Axios, full CRUD (GET, POST, PUT, DELETE).' },
   axios: { id: 'axios', name: 'Axios', color: '#5A29E4', category: 'data' },
   supabase: { id: 'supabase', name: 'Supabase', color: '#3ECF8E', category: 'data', note: 'Auth, PostgreSQL, Row Level Security, Storage and Edge Functions.' },
+  zod: { id: 'zod', name: 'Zod', color: '#3E67B1', category: 'data', note: 'Schema validation for sign-up, checkout and support forms.' },
   'local-storage': { id: 'local-storage', name: 'Web Storage', color: '#F59E0B', category: 'data' },
 
   // ---------- Browser APIs ----------
@@ -47,6 +49,7 @@ export const techs: Record<TechId, Tech> = {
   // ---------- Tools ----------
   git: { id: 'git', name: 'Git', color: '#F05032', category: 'tooling', note: 'Branches, merges and a clean project history.' },
   github: { id: 'github', name: 'GitHub', color: '#E5E7EB', category: 'tooling', note: 'Hosting, version history and Pages deployments.' },
+  'github-actions': { id: 'github-actions', name: 'GitHub Actions', color: '#2088FF', category: 'tooling', note: 'CI (lint, type-check, build, tests) and scheduled data-sync jobs.' },
   vite: { id: 'vite', name: 'Vite', color: '#A78BFA', category: 'tooling' },
   npm: { id: 'npm', name: 'npm', color: '#CB3837', category: 'tooling' },
   eslint: { id: 'eslint', name: 'ESLint', color: '#8080F2', category: 'tooling' },
@@ -66,6 +69,7 @@ export const techs: Record<TechId, Tech> = {
   auth: { id: 'auth', name: 'Authentication flows', color: '#F472B6', category: 'practices' },
   rbac: { id: 'rbac', name: 'Role-based access', color: '#FB923C', category: 'practices' },
   'code-splitting': { id: 'code-splitting', name: 'Code splitting', color: '#A78BFA', category: 'practices' },
+  testing: { id: 'testing', name: 'Automated tests', color: '#2DD4BF', category: 'practices', note: 'Unit tests with node:test and database tests on PGlite.' },
   a11y: { id: 'a11y', name: 'Accessibility', color: '#4ADE80', category: 'practices' },
   seo: { id: 'seo', name: 'SEO', color: '#FACC15', category: 'practices' },
   animation: { id: 'animation', name: 'UI animation', color: '#E879F9', category: 'practices' },
@@ -73,11 +77,11 @@ export const techs: Record<TechId, Tech> = {
 
 const groupMeta: Array<{ id: SkillCategory; title: string; description: string }> = [
   { id: 'languages', title: 'Languages', description: 'What I write every day — and what I reach for beyond the browser.' },
-  { id: 'frontend', title: 'Frameworks & UI', description: 'React ecosystem, styling systems, motion, sliders, charts and 3D.' },
+  { id: 'frontend', title: 'Frameworks & UI', description: 'React ecosystem, styling systems, forms, motion, sliders, charts and 3D.' },
   { id: 'state', title: 'State management', description: 'Local, global and server state.' },
   { id: 'data', title: 'Data & backend', description: 'APIs, Backend-as-a-Service and persistence.' },
   { id: 'browser', title: 'Browser APIs', description: 'Platform features used directly, without libraries.' },
-  { id: 'tooling', title: 'Tools & workflow', description: 'Version control, builds, linting, design hand-off and API testing.' },
+  { id: 'tooling', title: 'Tools & workflow', description: 'Version control, builds, linting, CI, design hand-off and API testing.' },
   { id: 'deploy', title: 'Deployment', description: 'Where my projects are hosted.' },
   { id: 'practices', title: 'Practices', description: 'Approaches applied across real projects.' },
 ];
